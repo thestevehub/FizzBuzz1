@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz1", "FizzBuzz1\FizzBuzz1.csproj", "{909321BB-5B34-4C5C-887F-8041C5386A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzLib", "FizzBuzzLib\FizzBuzzLib.csproj", "{27E52738-2FB7-4C2D-BB7E-399DDD59658D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestFizzBuzz", "UnitTestFizzBuzz\UnitTestFizzBuzz.csproj", "{647A902F-4A6E-47F3-B530-652B78CB4ED7}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FizzBuzzWeb", "FizzBuzzWeb\", "{A4C82DA3-BCAE-47EA-AEA3-C812FCFD3B0C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{27e52738-2fb7-4c2d-bb7e-399ddd59658d}|FizzBuzzLib.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65062"
+		Debug.AspNetCompiler.PhysicalPath = "FizzBuzzWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65062\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65062"
+		Release.AspNetCompiler.PhysicalPath = "FizzBuzzWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65062\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65062"
+		SlnRelativePath = "FizzBuzzWeb\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{909321BB-5B34-4C5C-887F-8041C5386A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909321BB-5B34-4C5C-887F-8041C5386A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909321BB-5B34-4C5C-887F-8041C5386A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909321BB-5B34-4C5C-887F-8041C5386A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E52738-2FB7-4C2D-BB7E-399DDD59658D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E52738-2FB7-4C2D-BB7E-399DDD59658D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E52738-2FB7-4C2D-BB7E-399DDD59658D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E52738-2FB7-4C2D-BB7E-399DDD59658D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647A902F-4A6E-47F3-B530-652B78CB4ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647A902F-4A6E-47F3-B530-652B78CB4ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647A902F-4A6E-47F3-B530-652B78CB4ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647A902F-4A6E-47F3-B530-652B78CB4ED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C82DA3-BCAE-47EA-AEA3-C812FCFD3B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C82DA3-BCAE-47EA-AEA3-C812FCFD3B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C82DA3-BCAE-47EA-AEA3-C812FCFD3B0C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C82DA3-BCAE-47EA-AEA3-C812FCFD3B0C}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

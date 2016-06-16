@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Fizz Buzz";
+}
+
+@{
+    if (IsPost)
+    {
+        var startNumber = Convert.ToInt32(Request["StartNumber"]);
+        var endNumber = Convert.ToInt32(Request["EndNumber"]);
+        var pairsText = Request["pairsText"];
+        var pairsValue = Request["pairsValue"];
+
+        var pairsTextArray = pairsText.Split(',');
+        var pairsValueArray = pairsValue.Split(',');
+
+        if (startNumber == endNumber || startNumber > endNumber)
+        {
+            <p>The start number and end number are not valid</p>
+
+            return;
+        }
+
+        var request = new FizzBuzzLib.FizzBuzzRequest { StartCount = startNumber, EndCount = endNumber };
+
+        for (var i = 0; i < pairsTextArray.Count(); i++)
+        {
+            if (string.IsNullOrEmpty(pairsTextArray[i]) || string.IsNullOrEmpty(pairsValueArray[i])) { continue; }
+
+            int value;
+
+            if (!int.TryParse(pairsValueArray[i], out value))
+            {
+                continue;
+            }
+
+            request.ValueTextPairs.Add(new FizzBuzzLib.FizzBuzzValueTextPair(pairsTextArray[i], value));
+        }
+
+        foreach (var line in FizzBuzzLib.FizzBuzz.GetFizzBuzzLines(request))
+        {
+            <p>@line</p>
+        }
+
+        <button class="btn btn-default" onclick="window.history.back();">Back</button>
+    }
+    else
+    {
+        {
+            <form method="post" action="" class="form">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="StartNumber" class="form-label">Start Number</label>
+                        <input type="number" class="form-control" text="Start Number" name="StartNumber" value="1" required min="1" max="10000000" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="EndNumber" class="form-label">End Number</label>
+                        <input type="number" class="form-control" text="End Number" name="EndNumber" value="100" required min="1" max="10000000" />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <table class="table" name="ValueTextPairs" id="ValueTextPairs">
+                        <tr><th>Text</th><th>Value</th></tr>
+                        <tr>
+                            <td><input class="form-control" value="Fizz" type="text" name="pairsText" /></td>
+                            <td><input class="form-control" value="3" type="number" name="pairsValue" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input class="form-control" value="Buzz" type="text" name="pairsText" /></td>
+                            <td><input class="form-control" value="5" type="number" name="pairsValue" /></td>
+                            <td><input type="button" class="btn btn-default btn-sm" id="btnSub" value="-" /></td>
+                        </tr>
+                    </table>
+                    <div class="pull-right">
+                        <input type="button" class="btn btn-default" id="btnAdd" value="Add Values" />
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-default" value="Run Fizz Buzz" />
+            </form>
+        }
+    }
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function addRow() {
+            var html = '<tr><td><input class="form-control" value="" type="text" name="pairsText" /></td><td><input class="form-control" value="" type="number" name="pairsValue" /></td>' +
+                            '<td><input type="button" class="btn btn-default btn-sm" id="btnSub" value="-" /></td></tr>';
+            $(html).appendTo($("#ValueTextPairs"));
+
+        }
+
+        $("#btnAdd").click(addRow);
+
+        function deleteRow() {
+            var par = $(this).parent().parent();
+            par.remove();
+        };
+        $("#ValueTextPairs").on("click", "#btnSub", deleteRow);
+
+    });
+</script>
